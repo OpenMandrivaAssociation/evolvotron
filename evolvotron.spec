@@ -12,6 +12,7 @@ Group: Toys
 BuildRoot: %{_tmppath}/%{name}-buildroot
 URL: http://evolvotron.sf.net
 Buildrequires: qt3-devel
+Buildrequires: boost-devel
 
 %description
 Evolvotron Interactive "generative art" software to evolve
