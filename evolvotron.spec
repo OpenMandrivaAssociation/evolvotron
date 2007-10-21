@@ -1,13 +1,12 @@
 %define name evolvotron
-%define version 0.4.0
-%define release %mkrel 4
+%define version 0.5.0
+%define release %mkrel 1
 
 Summary: Interactive "generative art" software
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://prdownloads.sourceforge.net/evolvotron/%{name}-%{version}.tar.bz2
-Patch: evolvotron-0.4.0-gcc4.1.patch
+Source0: http://prdownloads.sourceforge.net/evolvotron/%{name}-%{version}.tar.gz
 License: GPL
 Group: Toys
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -23,7 +22,6 @@ for you.
 
 %prep
 %setup -q -n %name
-%patch -p1
 
 %build
 export QTDIR=%_prefix/lib/qt3
@@ -57,7 +55,7 @@ Icon=toys_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Games-Toys;Amusement;
+Categories=Qt;Amusement;
 EOF
 
 
