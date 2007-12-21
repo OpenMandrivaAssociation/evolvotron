@@ -9,6 +9,7 @@ Release: %{release}
 Source0: http://prdownloads.sourceforge.net/evolvotron/%{name}-%{version}.tar.gz
 License: GPL
 Group: Toys
+BuildRoot: %{_tmppath}/%{name}-buildroot
 URL: http://evolvotron.sf.net
 Buildrequires: qt3-devel
 Buildrequires: boost-devel
