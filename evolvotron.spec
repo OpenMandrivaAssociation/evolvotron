@@ -36,16 +36,6 @@ mkdir -p %buildroot%_bindir
 install -m 755 evolvotron/evolvotron evolvotron_mutate/evolvotron_mutate \
   evolvotron_render/evolvotron_render %buildroot%_bindir
 
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}): \
-needs="x11" \
-section="More Applications/Games/Toys" \
-title="Evolvotron" \
-longtitle="Interactive generative art software" \
-command="%{name}" \
-icon="toys_section.png" xdg="true"
-EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -74,6 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README CHANGES LICENSE TODO
 %_bindir/%{name}*
 %_datadir/applications/mandriva*
-%_menudir/%name
 
 
