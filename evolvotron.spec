@@ -1,17 +1,17 @@
 %define name evolvotron
-%define version 0.5.1
-%define release %mkrel 3
+%define version 0.6.0
+%define release %mkrel 1
 
 Summary: Interactive "generative art" software
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/evolvotron/%{name}-%{version}.tar.gz
-License: GPL
+License: GPLv2+
 Group: Toys
 BuildRoot: %{_tmppath}/%{name}-buildroot
 URL: http://evolvotron.sf.net
-Buildrequires: qt3-devel
+Buildrequires: qt4-devel
 Buildrequires: boost-devel
 
 %description
@@ -25,9 +25,7 @@ for you.
 %setup -q -n %name
 
 %build
-export QTDIR=%_prefix/lib/qt3
-export PATH=$QTDIR/bin:$PATH
-./configure fs
+qmake main.pro
 make
 
 %install
@@ -35,6 +33,9 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p %buildroot%_bindir
 install -m 755 evolvotron/evolvotron evolvotron_mutate/evolvotron_mutate \
   evolvotron_render/evolvotron_render %buildroot%_bindir
+
+mkdir -p %buildroot%_mandir/man1
+install -m 644 man/man1/*.1 %buildroot%_mandir/man1
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -66,7 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc README CHANGES LICENSE TODO
+%doc USAGE %name.html 
 %_bindir/%{name}*
+%_mandir/man1/%{name}*.1*
 %_datadir/applications/mandriva*
 
 
