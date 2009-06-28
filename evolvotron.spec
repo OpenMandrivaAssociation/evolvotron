@@ -7,6 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/evolvotron/%{name}-%{version}.tar.gz
+Patch: evolvotron-qmake-name.patch
 License: GPLv2+
 Group: Toys
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -23,6 +24,7 @@ for you.
 
 %prep
 %setup -q -n %name
+%patch -p1
 
 %build
 ./BUILD
