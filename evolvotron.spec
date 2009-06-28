@@ -25,8 +25,7 @@ for you.
 %setup -q -n %name
 
 %build
-qmake main.pro
-make
+./BUILD
 
 %install
 rm -rf $RPM_BUILD_ROOT
