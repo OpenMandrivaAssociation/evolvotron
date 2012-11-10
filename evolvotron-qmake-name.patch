@@ -1,0 +1,23 @@
+diff -p -up evolvotron/configure~ evolvotron/configure
+--- evolvotron/configure~	2009-06-27 14:47:48.000000000 +0200
++++ evolvotron/configure	2009-06-28 15:11:49.000000000 +0200
+@@ -12,7 +12,7 @@ fi
+ # TODO?: Should perhaps test "which qmake" here.
+ # If not found, add $(QTDIR)/bin to path.  But the ./BUILD script does that.
+ echo "Your qmake version is:"
+-qmake-qt4 --version 
++qmake --version 
+ 
+ echo
+ echo "Your gcc version is (unless qmake is set up to use a different one):"
+@@ -29,8 +29,8 @@ CONFIG_OPTS="$@"
+ VERSION_NUMBER=`./VERSION`
+ 
+ echo
+-echo "Running qmake-qt4 with CONFIG_OPTS=$CONFIG_OPTS VERSION_NUMBER=$VERSION_NUMBER..."
++echo "Running qmake with CONFIG_OPTS=$CONFIG_OPTS VERSION_NUMBER=$VERSION_NUMBER..."
+ 
+-qmake-qt4 "CONFIG_OPTS=$CONFIG_OPTS" "VERSION_NUMBER=$VERSION_NUMBER" main.pro 
++qmake "CONFIG_OPTS=$CONFIG_OPTS" "VERSION_NUMBER=$VERSION_NUMBER" main.pro 
+ 
+ echo "...configuration completed - ready to do 'make' now"
