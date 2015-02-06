@@ -1,6 +1,6 @@
 %define name evolvotron
 %define version 0.6.1
-%define release %mkrel 2
+%define release 3
 
 Summary: Interactive "generative art" software
 Name: %{name}
