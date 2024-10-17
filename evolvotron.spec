@@ -11,7 +11,7 @@ Patch: evolvotron-qmake-name.patch
 License: GPLv2+
 Group: Toys
 BuildRoot: %{_tmppath}/%{name}-buildroot
-URL: http://evolvotron.sf.net
+URL: https://evolvotron.sf.net
 Buildrequires: qt4-devel
 Buildrequires: boost-devel
 
